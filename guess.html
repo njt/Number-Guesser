@@ -1,0 +1,31 @@
+<html>
+<head><title>Number Guesser</title></head>
+<link rel="stylesheet" type="text/css" href="raley.css">
+<script>
+// this is javascript
+number = Math.random();
+number = 100 * number + 1;
+number = Math.floor( number );
+
+function HandleTheirGuess () {
+  TheirGuess=document.forms["TheForm"]["Theguess"].value;
+  if (TheirGuess == number) {
+    alert("You Got It!");
+    number = Math.random();
+number = 8 * number;
+number = Math.floor( number );
+  } else if (TheirGuess > number) {
+    alert ("Too Big! Try Again");
+  } else if (TheirGuess < number) {
+    alert ("Too Small! Try Again");
+    }
+  return false;
+}
+</script>
+<body>
+<h1>Can You Guess My Number?</h1>
+<div id=chatter> Guess My Number</div>
+<form name="TheForm" onsubmit="return HandleTheirGuess()"><input name="Theguess" type=text>
+</form>
+</body>
+</html>
